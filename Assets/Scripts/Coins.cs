@@ -17,7 +17,7 @@ public class Coins : MonoBehaviour
     {
         while (true)
         {
-            GameManager.instance.IncreaseCoin(number);
+            UIManager.instance.IncreaseCoin(number);
             yield return new WaitForSecondsRealtime(1.0f);
         }
 
