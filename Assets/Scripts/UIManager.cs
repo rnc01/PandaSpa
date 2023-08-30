@@ -30,11 +30,9 @@ public class UIManager : MonoBehaviour
         text.SetText(coin.ToString());
     }
 
-    public void AddBabyPanda()
+    public void CreatePandaPrototype(GameObject pandaPrototype)
     {
-        GameObject newBabyPanda = Instantiate(baby_panda_prototype);
-        Vector3 newPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        newPosition.z = -1;
-        newBabyPanda.transform.position = newPosition;
+        GameObject newPandaPrototype = Instantiate(pandaPrototype, GameObject.Find("Canvas").GetComponent<Transform>());
+        pandaPrototype.transform.position = new Vector3(0, 0, -1);
     }
 }
