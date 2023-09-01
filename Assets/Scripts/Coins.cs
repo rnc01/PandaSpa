@@ -27,5 +27,6 @@ public class Coins : MonoBehaviour
     void Update()
     {
         //GameManager.instance.IncreaseCoin(1);
+        Debug.Log(number);
     }
 }

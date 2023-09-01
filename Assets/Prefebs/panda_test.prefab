@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8588280429041682677}
   - component: {fileID: 5045668743217838478}
   - component: {fileID: -8743339662872206905}
+  - component: {fileID: -1495639486373262187}
   m_Layer: 6
   m_Name: panda_test
   m_TagString: Untagged
@@ -101,3 +102,16 @@ SortingGroup:
   m_SortingLayerID: 432753807
   m_SortingLayer: 1
   m_SortingOrder: 0
+--- !u!114 &-1495639486373262187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8664086916086259755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1889f63a13c354a43a539026c485bb92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  number: 2
