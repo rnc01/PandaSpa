@@ -13,11 +13,11 @@ public class PandaPrototype : MonoBehaviour
         newPanda.transform.position = gameObject.transform.position;
         Debug.Log("addPanda");
         Debug.Log(newPanda.transform.position);
-        Destroy(this);
+        Destroy(gameObject);
     }
 
     public void DeletePanda()
     {
-        Destroy(this);
+        Destroy(gameObject);
     }
 }

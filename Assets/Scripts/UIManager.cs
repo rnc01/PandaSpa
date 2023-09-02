@@ -33,6 +33,6 @@ public class UIManager : MonoBehaviour
     public void CreatePandaPrototype(GameObject pandaPrototype)
     {
         GameObject newPandaPrototype = Instantiate(pandaPrototype, GameObject.Find("Canvas").GetComponent<Transform>());
-        pandaPrototype.transform.position = new Vector3(0, 0, -1);
+        pandaPrototype.transform.position = new Vector3(800, 1000, -1);
     }
 }
