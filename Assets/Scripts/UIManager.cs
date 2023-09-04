@@ -4,13 +4,10 @@ using UnityEngine;
 using TMPro;
 using System.IO;
 
-
-
 public class UIManager : MonoBehaviour
 {
-    public GameObject baby_panda_prototype;
-    public GameObject baby;
-    public GameObject pandaprototype;
+    public GameObject Panda;
+    public GameObject pandaPrototype;
 
     // Money Text
     public static UIManager instance = null;
@@ -30,7 +27,7 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        pandaprototype = GameObject.Find("PandaPrototype");
+        pandaPrototype = GameObject.Find("PandaPrototype");
         GameLoad();
         //Debug.Log(pp.PandaNumberGet());
     }
@@ -62,21 +59,20 @@ public class UIManager : MonoBehaviour
         float PandaY;
         string Panda;
         int sCoin = PlayerPrefs.GetInt("Coin");
-        for (int i = 0; i < pandaprototype.GetComponent<PandaPrototype>().PandaNumberGet(); i++)
+        for (int i = 0; i < pandaPrototype.GetComponent<PandaPrototype>().PandaNumberGet(); i++)
         {
             PandaX = PlayerPrefs.GetFloat("PandaX" + i);
             PandaY = PlayerPrefs.GetFloat("PandaY" + i);
 
-            pandaprototype.GetComponent<PandaPrototype>().AddPanda(PandaX, PandaY, baby);
+            pandaPrototype.GetComponent<PandaPrototype>().AddPanda(PandaX, PandaY, this.Panda);
         }
-        
-        coin = sCoin;
 
+        coin = sCoin;
     }
 
     public void CreatePandaPrototype(GameObject pandaPrototype)
     {
-        GameObject newPandaPrototype = Instantiate(pandaPrototype, GameObject.Find("Canvas").GetComponent<Transform>());
-        pandaPrototype.transform.position = new Vector3(800, 1000, -1);
+        GameObject newPandaPrototype = Instantiate(Panda, GameObject.Find("Canvas").transform);
+        newPandaPrototype.transform.position = new Vector3(800, 1000, -1);
     }
 }
