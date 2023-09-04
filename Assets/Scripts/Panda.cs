@@ -29,7 +29,7 @@ public abstract class Panda : MonoBehaviour
 
     public enum Type { BabyPanda, AdultPanda, SellerPanda }
     public static PandaData[,] PandaDataList = {
-    { new PandaData(1, 100, 20, 5f), new PandaData(1, 100, 20, 5f), new PandaData(1, 100, 20, 5f) }, // babyPanda, level(1, 2, 3)
+    { new PandaData(1, 100, 20, 5f), new PandaData(1, 100, 20, 5f), new PandaData(1, 100, 20, 5f) }, // Panda, level(1, 2, 3)
     { new PandaData(1, 100, 20, 5f), new PandaData(1, 100, 20, 5f), new PandaData(1, 100, 20, 5f) }, // AdultPanda, level(1, 2, 3)
     { new PandaData(1, 100, 20, 5f), new PandaData(1, 100, 20, 5f), new PandaData(1, 100, 20, 5f) }, // SellerPanda, level(1, 2, 3)
     };

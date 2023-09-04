@@ -16,6 +16,7 @@ public class PandaPrototype : MonoBehaviour
 
     public void AddPanda()
     {
+        if (gameObject.transform.Find("Panda").gameObject.GetComponent<InstallCheck>().CanInstall() == false) return;
         GameObject newPanda = Instantiate(panda);
 
         // 판다 이름 바꿈

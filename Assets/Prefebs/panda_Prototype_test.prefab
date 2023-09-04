@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 292667139}
   - component: {fileID: 292667138}
   m_Layer: 0
-  m_Name: O
+  m_Name: X
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -285,7 +285,7 @@ GameObject:
   - component: {fileID: 1065400373}
   - component: {fileID: 1065400372}
   m_Layer: 0
-  m_Name: RawImage
+  m_Name: O_button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -298,14 +298,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1065400370}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 242692101}
-  m_Father: {fileID: 6053202066446516610}
-  m_RootOrder: 0
+  m_Father: {fileID: 6053202067273434984}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -416,7 +416,7 @@ GameObject:
   - component: {fileID: 1325797653}
   - component: {fileID: 1325797652}
   m_Layer: 0
-  m_Name: RawImage (1)
+  m_Name: X_button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -429,14 +429,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1325797650}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 292667137}
-  m_Father: {fileID: 6053202066446516610}
-  m_RootOrder: 1
+  m_Father: {fileID: 6053202067273434984}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -545,8 +545,10 @@ GameObject:
   - component: {fileID: 6053202066446516610}
   - component: {fileID: 6053202066446516668}
   - component: {fileID: 6053202066446516669}
+  - component: {fileID: 8018913306105926740}
+  - component: {fileID: 6986912328346908876}
   m_Layer: 0
-  m_Name: RawImage
+  m_Name: Panda
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -563,9 +565,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1065400371}
-  - {fileID: 1325797651}
+  m_Children: []
   m_Father: {fileID: 6053202067273434984}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -609,6 +609,34 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &8018913306105926740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6053202066446516611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43dc1ca25186b9e47ad9c1b1979f4485, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!58 &6986912328346908876
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6053202066446516611}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.5161133, y: -5.0927887}
+  serializedVersion: 2
+  m_Radius: 145.46887
 --- !u!1 &6053202067273434988
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,6 +671,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6053202066446516610}
+  - {fileID: 1065400371}
+  - {fileID: 1325797651}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -737,3 +767,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panda: {fileID: 306977201672678670, guid: 43f010c89e2c88c418ae993e80290bbc, type: 3}
+  baby: {fileID: 306977201672678670, guid: 43f010c89e2c88c418ae993e80290bbc, type: 3}
