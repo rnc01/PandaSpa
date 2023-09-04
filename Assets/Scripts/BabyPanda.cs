@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BabyPanda : Panda
 {
+    
     private void Awake()
     {
         pandaType = Type.BabyPanda;

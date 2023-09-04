@@ -3,7 +3,9 @@ guid: eac41600641bc994594ff75764cab82a
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - panda: {instanceID: 0}
+  - baby: {fileID: 306977201672678670, guid: 43f010c89e2c88c418ae993e80290bbc, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

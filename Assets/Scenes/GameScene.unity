@@ -479,6 +479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baby_panda_prototype: {fileID: 8664086916086259755, guid: 9811422306dd09948aa411d02de2c320, type: 3}
   text: {fileID: 869254739}
+  coin: 0
 --- !u!4 &515046976
 Transform:
   m_ObjectHideFlags: 0

@@ -9,6 +9,8 @@ using System.IO;
 public class UIManager : MonoBehaviour
 {
     public GameObject baby_panda_prototype;
+    public GameObject baby;
+    public GameObject pandaprototype;
 
     // Money Text
     public static UIManager instance = null;
@@ -28,7 +30,14 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
+        pandaprototype = GameObject.Find("PandaPrototype");
+        GameLoad();
+        //Debug.Log(pp.PandaNumberGet());
+    }
 
+    private void Update()
+    {
+        GameSave();
     }
 
     // 돈이 증가하여 텍스트로 출력하는 함수
@@ -42,16 +51,27 @@ public class UIManager : MonoBehaviour
     public void GameSave()
     {
         PlayerPrefs.SetInt("Coin", coin);
-        //PlayerPrefs.SetFloat("PandaX", baby_panda_prototype.transform.position.x);
-        //PlayerPrefs.SetFloat("PandaY", baby_panda_prototype.transform.position.y);
+
         PlayerPrefs.Save();
     }
 
+    // 게임 요소 불러오는 함수
     public void GameLoad()
     {
+        float PandaX;
+        float PandaY;
+        string Panda;
         int sCoin = PlayerPrefs.GetInt("Coin");
+        for (int i = 0; i < pandaprototype.GetComponent<PandaPrototype>().PandaNumberGet(); i++)
+        {
+            PandaX = PlayerPrefs.GetFloat("PandaX" + i);
+            PandaY = PlayerPrefs.GetFloat("PandaY" + i);
 
+            pandaprototype.GetComponent<PandaPrototype>().AddPanda(PandaX, PandaY, baby);
+        }
+        
         coin = sCoin;
+
     }
 
     public void CreatePandaPrototype(GameObject pandaPrototype)
