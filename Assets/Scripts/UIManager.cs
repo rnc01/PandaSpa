@@ -34,9 +34,9 @@ public class UIManager : MonoBehaviour
 
         //Debug.Log(pp.PandaNumberGet());
 
-        for (int i = 0; i < 1000; i++) 
+        for (int i = 0; i < 1000; i++)
         {
-            if(File.Exists(DataManager.instance.path + $"{i}"))
+            if (File.Exists(DataManager.instance.path + $"{i}"))
             {
                 DataManager.instance.nownumber = i;
                 DataManager.instance.LoadData();
@@ -44,7 +44,7 @@ public class UIManager : MonoBehaviour
 
             }
         }
-        
+
     }
 
     //private void Update()
