@@ -9,6 +9,8 @@ public class UIManager : MonoBehaviour
     public GameObject Panda;
     public GameObject pandaPrototype;
 
+    public GameObject[] pandatype;
+
     // Money Text
     public static UIManager instance = null;
 
@@ -25,17 +27,30 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    private void Start()
+    void Start()
     {
-        pandaPrototype = GameObject.Find("PandaPrototype");
-        GameLoad();
+        //pandaPrototype = GameObject.Find("PandaPrototype");
+        //GameLoad();
+
         //Debug.Log(pp.PandaNumberGet());
+
+        for (int i = 0; i < 1000; i++) 
+        {
+            if(File.Exists(DataManager.instance.path + $"{i}"))
+            {
+                DataManager.instance.nownumber = i;
+                DataManager.instance.LoadData();
+
+
+            }
+        }
+        
     }
 
-    private void Update()
-    {
-        GameSave();
-    }
+    //private void Update()
+    //{
+    //    GameSave();
+    //}
 
     // 돈이 증가하여 텍스트로 출력하는 함수
     public void IncreaseCoin(int increase)
@@ -45,30 +60,30 @@ public class UIManager : MonoBehaviour
     }
 
     // 게임 요소 저장하는 함수
-    public void GameSave()
-    {
-        PlayerPrefs.SetInt("Coin", coin);
+    //public void GameSave()
+    //{
+    //    PlayerPrefs.SetInt("Coin", coin);
 
-        PlayerPrefs.Save();
-    }
+    //    PlayerPrefs.Save();
+    //}
 
     // 게임 요소 불러오는 함수
-    public void GameLoad()
-    {
-        float PandaX;
-        float PandaY;
-        string Panda;
-        int sCoin = PlayerPrefs.GetInt("Coin");
-        for (int i = 0; i < pandaPrototype.GetComponent<PandaPrototype>().PandaNumberGet(); i++)
-        {
-            PandaX = PlayerPrefs.GetFloat("PandaX" + i);
-            PandaY = PlayerPrefs.GetFloat("PandaY" + i);
+    //public void GameLoad()
+    //{
+    //    float PandaX;
+    //    float PandaY;
+    //    string Panda;
+    //    int sCoin = PlayerPrefs.GetInt("Coin");
+    //    for (int i = 0; i < pandaPrototype.GetComponent<PandaPrototype>().PandaNumberGet(); i++)
+    //    {
+    //        PandaX = PlayerPrefs.GetFloat("PandaX" + i);
+    //        PandaY = PlayerPrefs.GetFloat("PandaY" + i);
 
-            pandaPrototype.GetComponent<PandaPrototype>().AddPanda(PandaX, PandaY, this.Panda);
-        }
+    //        pandaPrototype.GetComponent<PandaPrototype>().AddPanda(PandaX, PandaY, this.Panda);
+    //    }
 
-        coin = sCoin;
-    }
+    //    coin = sCoin;
+    //}
 
     public void CreatePandaPrototype(GameObject pandaPrototype)
     {
