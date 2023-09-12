@@ -34,19 +34,17 @@ public class UIManager : MonoBehaviour
 
         //Debug.Log(pp.PandaNumberGet());
 
-
-        // 38~48 에러나서 잠시 주석해뒀습니다 - 홍식
-        //for (int i = 0; i < 1000; i++)
-        //{
-        //    if (File.Exists(DataManager.instance.path + $"{i}"))
-        //    {
-        //        DataManager.instance.nownumber = i;
-        //        DataManager.instance.LoadData();
+        for (int i = 0; i < 1000; i++) 
+        {
+            if(File.Exists(DataManager.instance.path + $"{i}"))
+            {
+                DataManager.instance.nownumber = i;
+                DataManager.instance.LoadData();
 
 
-        //    }
-        //}
-
+            }
+        }
+        
     }
 
     //private void Update()
