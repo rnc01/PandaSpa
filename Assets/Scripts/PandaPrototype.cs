@@ -12,16 +12,17 @@ public class PandaPrototype : MonoBehaviour
 
     public void AddPanda()
     {
-        if (gameObject.transform.Find("Panda").gameObject.GetComponent<InstallCheck>().CanInstall() == false) return;
+        if (gameObject.GetComponent<InstallCheck>().CanInstall() == false) return;
         GameObject newPanda = Instantiate(panda);
         
+        // 20~25 오류나서 임시로 주석처리 해뒀습니다 - 홍식
         // 판다번호(종류,x,y) 저장
-        DataManager.instance.nownumber = pandaNumber;
-        pandaNumber++;
-        PandaSetting(panda);
-        DataManager.instance.nowData.PandaX = newPanda.transform.position.x;
-        DataManager.instance.nowData.PandaY = newPanda.transform.position.y;
-        DataManager.instance.SaveData();
+        //DataManager.instance.nownumber = pandaNumber;
+        //pandaNumber++;
+        //PandaSetting(panda);
+        //DataManager.instance.nowData.PandaX = newPanda.transform.position.x;
+        //DataManager.instance.nowData.PandaY = newPanda.transform.position.y;
+        //DataManager.instance.SaveData();
 
         // 판다 이름 바꿈
         //if (newPanda == baby)
@@ -33,11 +34,8 @@ public class PandaPrototype : MonoBehaviour
         //    BabyNumber++;
         //}
 
-        Debug.Log(gameObject.transform.position);
         newPanda.transform.position = gameObject.transform.position;
-        Debug.Log("addPanda");
         Debug.Log(newPanda.transform.position);
-
         Destroy(gameObject);
     }
 
