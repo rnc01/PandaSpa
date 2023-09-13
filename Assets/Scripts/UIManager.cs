@@ -11,6 +11,8 @@ public class UIManager : MonoBehaviour
 
     public GameObject[] pandatype;
 
+    public AudioSource bgmPlayer;
+
     // Money Text
     public static UIManager instance = null;
 
@@ -29,6 +31,7 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
+        bgmPlayer.Play();
 
         for (int i = 0; i < 1000; i++)
         {
