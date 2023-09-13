@@ -39,6 +39,7 @@ public class UIManager : MonoBehaviour
         {
             if(File.Exists(DataManager.instance.path + $"{i}"))
 
+
         for (int i = 0; i < 1000; i++)
         {
             if (File.Exists(DataManager.instance.path + $"{i}"))
