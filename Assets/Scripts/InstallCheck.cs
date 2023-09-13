@@ -17,7 +17,6 @@ public class InstallCheck : MonoBehaviour
             isPandaCollided = true;
 
 
-        Debug.Log(CanInstall());
         if (CanInstall())
         {
             pandaImage.color = new Color32(255, 255, 255, 255);

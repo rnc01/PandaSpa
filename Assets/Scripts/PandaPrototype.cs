@@ -35,7 +35,6 @@ public class PandaPrototype : MonoBehaviour
         //}
 
         newPanda.transform.position = gameObject.transform.position;
-        Debug.Log(newPanda.transform.position);
         Destroy(gameObject);
     }
 

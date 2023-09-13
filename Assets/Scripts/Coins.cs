@@ -5,7 +5,7 @@ using UnityEngine;
 public class Coins : MonoBehaviour
 {
     [SerializeField]
-    private int number;
+    private int number = 0;
 
     // Start is called before the first frame update
     void Start()
