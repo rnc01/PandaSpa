@@ -29,30 +29,21 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
-        //pandaPrototype = GameObject.Find("PandaPrototype");
-        //GameLoad();
+        pandatype = GameObject.FindGameObjectsWithTag("Panda");
 
-        //Debug.Log(pp.PandaNumberGet());
+        for (int i = 0; i < 1000; i++)
+        {
+            if (File.Exists(DataManager.instance.path + $"{i}"))
+            {
+                DataManager.instance.nownumber = i;
+                DataManager.instance.LoadData();
+                PandaGetting();
 
-
-        // 38~48 에러나서 잠시 주석해뒀습니다 - 홍식
-        //for (int i = 0; i < 1000; i++)
-        //{
-        //    if (File.Exists(DataManager.instance.path + $"{i}"))
-        //    {
-        //        DataManager.instance.nownumber = i;
-        //        DataManager.instance.LoadData();
-
-
-        //    }
-        //}
+            }
+        }
 
     }
 
-    //private void Update()
-    //{
-    //    GameSave();
-    //}
 
     // 돈이 증가하여 텍스트로 출력하는 함수
     public void IncreaseCoin(int increase)
@@ -61,35 +52,18 @@ public class UIManager : MonoBehaviour
         text.SetText(coin.ToString());
     }
 
-    // 게임 요소 저장하는 함수
-    //public void GameSave()
-    //{
-    //    PlayerPrefs.SetInt("Coin", coin);
-
-    //    PlayerPrefs.Save();
-    //}
-
-    // 게임 요소 불러오는 함수
-    //public void GameLoad()
-    //{
-    //    float PandaX;
-    //    float PandaY;
-    //    string Panda;
-    //    int sCoin = PlayerPrefs.GetInt("Coin");
-    //    for (int i = 0; i < pandaPrototype.GetComponent<PandaPrototype>().PandaNumberGet(); i++)
-    //    {
-    //        PandaX = PlayerPrefs.GetFloat("PandaX" + i);
-    //        PandaY = PlayerPrefs.GetFloat("PandaY" + i);
-
-    //        pandaPrototype.GetComponent<PandaPrototype>().AddPanda(PandaX, PandaY, this.Panda);
-    //    }
-
-    //    coin = sCoin;
-    //}
-
     public void CreatePandaPrototype(GameObject pandaPrototype)
     {
         GameObject newPandaPrototype = Instantiate(Panda, GameObject.Find("Canvas").transform);
         newPandaPrototype.transform.position = new Vector3(800, 1000, -1);
+    }
+
+    public void PandaGetting()
+    {
+        int panda = DataManager.instance.nowData.Panda;
+        float x = DataManager.instance.nowData.PandaX;
+        float y = DataManager.instance.nowData.PandaY;
+
+        PandaPrototype.instance.AddPanda(x, y, panda);
     }
 }

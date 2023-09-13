@@ -9,11 +9,17 @@ public class Data
     public float PandaX;
     public float PandaY;
 }
+public class DefalutData
+{
+    public int Coin;
+}
+
 public class DataManager : MonoBehaviour
 {
     public static DataManager instance;
 
     public Data nowData = new Data();
+    public DefalutData nowDD = new DefalutData();
 
     public string path;
     public int nownumber;
@@ -43,7 +49,10 @@ public class DataManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        nowDD.Coin = UIManager.instance.coin;
+
+        string dd = JsonUtility.ToJson(nowDD);
+        File.WriteAllText(path + "Coin", dd);
     }
 
     public void SaveData()
