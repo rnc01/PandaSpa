@@ -43,16 +43,13 @@ public class DataManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        print(path);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        nowDD.Coin = UIManager.instance.coin;
-
-        string dd = JsonUtility.ToJson(nowDD);
-        File.WriteAllText(path + "Coin", dd);
+        SaveDD();
     }
 
     public void SaveData()
@@ -66,5 +63,18 @@ public class DataManager : MonoBehaviour
     {
         string data = File.ReadAllText(path + nownumber.ToString());
         nowData = JsonUtility.FromJson<Data>(data);
+    }
+
+    public void SaveDD()
+    {
+        nowDD.Coin = UIManager.instance.coin;
+
+        string dd = JsonUtility.ToJson(nowDD);
+        File.WriteAllText(path + "Coin", dd);
+    }
+    public void LoadDD()
+    {
+        string dd = File.ReadAllText(path + "Coin");
+        nowDD = JsonUtility.FromJson<DefalutData>(dd);
     }
 }

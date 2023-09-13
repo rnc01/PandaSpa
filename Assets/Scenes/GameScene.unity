@@ -723,8 +723,7 @@ Transform:
   m_LocalPosition: {x: 557.08356, y: 904.6194, z: -1.4816008}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1445693347}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1364,11 +1363,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!4 &1445693347 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8546844205152243086, guid: 43f010c89e2c88c418ae993e80290bbc, type: 3}
-  m_PrefabInstance: {fileID: 1459404847}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1454044040
 GameObject:
   m_ObjectHideFlags: 0
@@ -1437,75 +1431,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1459404847
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 673343199}
-    m_Modifications:
-    - target: {fileID: 306977201672678670, guid: 43f010c89e2c88c418ae993e80290bbc, type: 3}
-      propertyPath: m_Name
-      value: BabyPanda
-      objectReference: {fileID: 0}
-    - target: {fileID: 3250371698270278538, guid: 43f010c89e2c88c418ae993e80290bbc, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4111461883351218169, guid: 43f010c89e2c88c418ae993e80290bbc, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7978007963149577404, guid: 43f010c89e2c88c418ae993e80290bbc, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8546844205152243086, guid: 43f010c89e2c88c418ae993e80290bbc, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8546844205152243086, guid: 43f010c89e2c88c418ae993e80290bbc, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1030
-      objectReference: {fileID: 0}
-    - target: {fileID: 8546844205152243086, guid: 43f010c89e2c88c418ae993e80290bbc, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -162
-      objectReference: {fileID: 0}
-    - target: {fileID: 8546844205152243086, guid: 43f010c89e2c88c418ae993e80290bbc, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8546844205152243086, guid: 43f010c89e2c88c418ae993e80290bbc, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8546844205152243086, guid: 43f010c89e2c88c418ae993e80290bbc, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8546844205152243086, guid: 43f010c89e2c88c418ae993e80290bbc, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8546844205152243086, guid: 43f010c89e2c88c418ae993e80290bbc, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8546844205152243086, guid: 43f010c89e2c88c418ae993e80290bbc, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8546844205152243086, guid: 43f010c89e2c88c418ae993e80290bbc, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8546844205152243086, guid: 43f010c89e2c88c418ae993e80290bbc, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 43f010c89e2c88c418ae993e80290bbc, type: 3}
 --- !u!1 &1499505485
 GameObject:
   m_ObjectHideFlags: 0
@@ -1898,7 +1823,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panda: {fileID: 0}
   baby: {fileID: 306977201672678670, guid: 43f010c89e2c88c418ae993e80290bbc, type: 3}
-  pandatype: []
+  pandatype:
+  - {fileID: 306977201672678670, guid: 43f010c89e2c88c418ae993e80290bbc, type: 3}
   a: 2
 --- !u!4 &1701432633
 Transform:

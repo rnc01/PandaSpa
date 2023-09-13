@@ -22,7 +22,7 @@ public class PandaPrototype : MonoBehaviour
 
     void Start()
     {
-        pandatype = GameObject.FindGameObjectsWithTag("Panda");
+
     }
 
     public void AddPanda()
