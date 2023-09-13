@@ -29,7 +29,6 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
-        pandatype = GameObject.FindGameObjectsWithTag("Panda");
 
         for (int i = 0; i < 1000; i++)
         {
@@ -41,6 +40,8 @@ public class UIManager : MonoBehaviour
 
             }
         }
+        DataManager.instance.LoadDD();
+        coin = DataManager.instance.nowDD.Coin;
 
     }
 
