@@ -40,7 +40,10 @@ public class DataManager : MonoBehaviour
 
         path = Application.persistentDataPath + "/save";
     }
-
+    private void Start()
+    {
+        print(path);
+    }
     // Update is called once per frame
     void Update()
     {
