@@ -9,7 +9,7 @@ public class Data
     public float PandaX;
     public float PandaY;
 }
-public class DefalutData
+public class DefaultData
 {
     public int Coin;
 }
@@ -19,7 +19,7 @@ public class DataManager : MonoBehaviour
     public static DataManager instance;
 
     public Data nowData = new Data();
-    public DefalutData nowDD = new DefalutData();
+    public DefaultData nowDD = new DefaultData();
 
     public string path;
     public int nownumber;
@@ -40,12 +40,10 @@ public class DataManager : MonoBehaviour
 
         path = Application.persistentDataPath + "/save";
     }
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-
+        print(path);
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -75,6 +73,6 @@ public class DataManager : MonoBehaviour
     public void LoadDD()
     {
         string dd = File.ReadAllText(path + "Coin");
-        nowDD = JsonUtility.FromJson<DefalutData>(dd);
+        nowDD = JsonUtility.FromJson<DefaultData>(dd);
     }
 }

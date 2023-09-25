@@ -43,8 +43,13 @@ public class UIManager : MonoBehaviour
 
             }
         }
-        DataManager.instance.LoadDD();
-        coin = DataManager.instance.nowDD.Coin;
+
+        if (File.Exists(DataManager.instance.path + "Coin"))
+        {
+            DataManager.instance.LoadDD();
+            coin = DataManager.instance.nowDD.Coin;
+
+        }
 
     }
 
