@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using JetBrains.Annotations;
+using Unity.VisualScripting;
 
 public class PandaPrototype : MonoBehaviour
 {
@@ -18,11 +19,15 @@ public class PandaPrototype : MonoBehaviour
     public GameObject baby;
     static int pandaNumber = 1;
     public GameObject[] pandatype;
-    public int a = 2;
 
     void Start()
     {
-
+        // 저장된 판다 번호 있다면 번호 불러오기
+        if (File.Exists(DataManager.instance.path + "Number"))
+        {
+            DataManager.instance.LoadND();
+            pandaNumber = DataManager.instance.nowND.Number;
+        }
     }
 
     public void AddPanda()
@@ -37,6 +42,8 @@ public class PandaPrototype : MonoBehaviour
         DataManager.instance.nowData.PandaX = gameObject.transform.position.x;
         DataManager.instance.nowData.PandaY = gameObject.transform.position.y;
         DataManager.instance.SaveData();
+        // 판다 번호 저장
+        DataManager.instance.SaveND(pandaNumber);
 
 
         newPanda.transform.position = gameObject.transform.position;

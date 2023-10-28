@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Tutorial : MonoBehaviour
 {
-    void Start()
+    public GameObject WelcomePanel;
+    public GameObject TStep1Panel;
+    public void OnClick()
     {
-        
+        UIManager.instance.IncreaseCoin(5000);
+        WelcomePanel.SetActive(false);
+        TStep1Panel.SetActive(true);
     }
-
-    void Update()
-    {
-        
-    }
+    
+    
 }

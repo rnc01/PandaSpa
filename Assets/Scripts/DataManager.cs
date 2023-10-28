@@ -13,6 +13,10 @@ public class DefaultData
 {
     public int Coin;
 }
+public class NumberData
+{
+    public int Number;
+}
 
 public class DataManager : MonoBehaviour
 {
@@ -20,6 +24,7 @@ public class DataManager : MonoBehaviour
 
     public Data nowData = new Data();
     public DefaultData nowDD = new DefaultData();
+    public NumberData nowND = new NumberData();
 
     public string path;
     public int nownumber;
@@ -78,5 +83,17 @@ public class DataManager : MonoBehaviour
     {
         string dd = File.ReadAllText(path + "Coin");
         nowDD = JsonUtility.FromJson<DefaultData>(dd);
+    }
+    public void SaveND(int number)
+    {
+        nowND.Number = number;
+
+        string nd = JsonUtility.ToJson(nowND);
+        File.WriteAllText(path + "Number", nd);
+    }
+    public void LoadND()
+    {
+        string nd = File.ReadAllText(path + "Number");
+        nowND = JsonUtility.FromJson<NumberData>(nd);
     }
 }

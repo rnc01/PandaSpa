@@ -8,6 +8,8 @@ public class UIManager : MonoBehaviour
 {
     public GameObject Panda;
     public GameObject pandaPrototype;
+    public GameObject WelcomePanel;
+    public GameObject TStep2Panel;
 
     public GameObject[] pandatype;
 
@@ -21,6 +23,7 @@ public class UIManager : MonoBehaviour
 
     public int coin = 0;
 
+
     void Awake()
     {
         if (instance == null)
@@ -31,25 +34,35 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
-        bgmPlayer.Play();
+        //bgmPlayer.Play();
 
+        if (File.Exists(DataManager.instance.path + "1"))
+        {
+            WelcomePanel.SetActive(false);
+        }
+        else { WelcomePanel.SetActive(true); }
+
+        print("here");
+        // 파일에 저장된 판다들 불러오기
         for (int i = 0; i < 1000; i++)
         {
             if (File.Exists(DataManager.instance.path + $"{i}"))
             {
+                print(DataManager.instance.path);
                 DataManager.instance.nownumber = i;
                 DataManager.instance.LoadData();
                 PandaGetting();
 
             }
         }
-
+        // 저장된 코인이 있다면 코인 불러오기
         if (File.Exists(DataManager.instance.path + "Coin"))
         {
             DataManager.instance.LoadDD();
             coin = DataManager.instance.nowDD.Coin;
 
         }
+
 
     }
 
@@ -65,6 +78,8 @@ public class UIManager : MonoBehaviour
     {
         GameObject newPandaPrototype = Instantiate(Panda, GameObject.Find("Canvas").transform);
         newPandaPrototype.transform.position = new Vector3(800, 1000, -1);
+
+        if(TStep2Panel.activeSelf == true) TStep2Panel.SetActive(false);
     }
 
     // 저장된 판다 불러오기 실현
