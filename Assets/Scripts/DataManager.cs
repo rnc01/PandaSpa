@@ -50,6 +50,7 @@ public class DataManager : MonoBehaviour
         SaveDD();
     }
 
+    // 판다 종류,위치 관련 정보 저장함수
     public void SaveData()
     {
         string data = JsonUtility.ToJson(nowData);
@@ -57,12 +58,14 @@ public class DataManager : MonoBehaviour
         File.WriteAllText(path + nownumber.ToString(), data);
     }
 
+    // 판다 종류,위치 관련 정보 불러오는 함수
     public void LoadData()
     {
         string data = File.ReadAllText(path + nownumber.ToString());
         nowData = JsonUtility.FromJson<Data>(data);
     }
 
+    // 코인 저장함수
     public void SaveDD()
     {
         nowDD.Coin = UIManager.instance.coin;
@@ -70,6 +73,7 @@ public class DataManager : MonoBehaviour
         string dd = JsonUtility.ToJson(nowDD);
         File.WriteAllText(path + "Coin", dd);
     }
+    // 코인 불러오는 함수
     public void LoadDD()
     {
         string dd = File.ReadAllText(path + "Coin");

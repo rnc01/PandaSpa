@@ -67,6 +67,7 @@ public class UIManager : MonoBehaviour
         newPandaPrototype.transform.position = new Vector3(800, 1000, -1);
     }
 
+    // 저장된 판다 불러오기 실현
     public void PandaGetting()
     {
         int panda = DataManager.instance.nowData.Panda;
