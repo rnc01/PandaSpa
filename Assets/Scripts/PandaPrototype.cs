@@ -32,13 +32,16 @@ public class PandaPrototype : MonoBehaviour
 
     public void AddPanda()
     {
-        if (gameObject.GetComponent<InstallCheck>().CanInstall() == false) return;
+        Debug.Log("AddPanda called");
+
+        // if (gameObject.GetComponent<InstallCheck>().CanInstall() == false) return;
         GameObject newPanda = Instantiate(panda);
 
         // 판다번호(종류,x,y) 저장
         DataManager.instance.nownumber = pandaNumber;
         pandaNumber++;
         PandaSetting(panda);
+        Vector2 position = Camera.main.ScreenToWorldPoint(gameObject.transform.position);
         DataManager.instance.nowData.PandaX = gameObject.transform.position.x;
         DataManager.instance.nowData.PandaY = gameObject.transform.position.y;
         DataManager.instance.SaveData();

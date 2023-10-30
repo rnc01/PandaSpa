@@ -10,9 +10,7 @@ public class UIManager : MonoBehaviour
     public GameObject pandaPrototype;
     public GameObject WelcomePanel;
     public GameObject TStep2Panel;
-
     public GameObject[] pandatype;
-
     public AudioSource bgmPlayer;
 
     // Money Text
@@ -27,9 +25,9 @@ public class UIManager : MonoBehaviour
     void Awake()
     {
         if (instance == null)
-        {
             instance = this;
-        }
+        else
+            Destroy(gameObject);
     }
 
     void Start()
