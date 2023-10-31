@@ -74,7 +74,7 @@ public class UIManager : MonoBehaviour
 
     public void CreatePandaPrototype(GameObject pandaPrototype)
     {
-        GameObject newPandaPrototype = Instantiate(Panda, GameObject.Find("Canvas").transform);
+        GameObject newPandaPrototype = Instantiate(Panda, GameObject.Find("Ingame").transform);
         newPandaPrototype.transform.position = new Vector3(800, 1000, -1);
 
         if(TStep2Panel.activeSelf == true) TStep2Panel.SetActive(false);
