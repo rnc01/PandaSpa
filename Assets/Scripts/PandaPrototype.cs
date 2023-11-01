@@ -16,7 +16,6 @@ public class PandaPrototype : MonoBehaviour
     }
 
     public GameObject panda;
-    public GameObject baby;
     static int pandaNumber = 1;
     public GameObject[] pandatype;
 

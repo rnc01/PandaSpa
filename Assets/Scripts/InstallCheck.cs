@@ -7,7 +7,7 @@ public class InstallCheck : MonoBehaviour
 {
     public bool isInSpa = false;
     public bool isPandaCollided = false;
-    public RawImage pandaImage; 
+    public SpriteRenderer pandaImage; 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

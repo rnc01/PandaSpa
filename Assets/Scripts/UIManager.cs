@@ -7,7 +7,7 @@ using System.IO;
 public class UIManager : MonoBehaviour
 {
     public GameObject Panda;
-    public GameObject pandaPrototype;
+    // public GameObject pandaPrototype;
     public GameObject WelcomePanel;
     public GameObject TStep2Panel;
     public GameObject[] pandatype;
@@ -18,9 +18,7 @@ public class UIManager : MonoBehaviour
 
     [SerializeField]
     private TextMeshProUGUI text;
-
     public int coin = 0;
-
 
     void Awake()
     {
@@ -30,15 +28,17 @@ public class UIManager : MonoBehaviour
             Destroy(gameObject);
     }
 
-    void Start()
+    public void StartTutorial()
     {
-        //bgmPlayer.Play();
-
         if (File.Exists(DataManager.instance.path + "1"))
         {
             WelcomePanel.SetActive(false);
         }
         else { WelcomePanel.SetActive(true); }
+    }
+
+    void Start()
+    {
 
         print("here");
         // 파일에 저장된 판다들 불러오기
@@ -60,15 +60,18 @@ public class UIManager : MonoBehaviour
             coin = DataManager.instance.nowDD.Coin;
 
         }
-
-
     }
-
 
     // 돈이 증가하여 텍스트로 출력하는 함수
     public void IncreaseCoin(int increase)
     {
         coin += 1 * increase;
+        text.SetText(coin.ToString());
+    }
+
+    public void DecreaseCoin(int increase)
+    {
+        coin -= 1 * increase;
         text.SetText(coin.ToString());
     }
 

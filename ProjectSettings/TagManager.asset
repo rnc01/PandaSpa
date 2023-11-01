@@ -47,9 +47,9 @@ TagManager:
   - name: Background
     uniqueID: 3223428303
     locked: 0
-  - name: Prototype
-    uniqueID: 432753807
-    locked: 0
   - name: Panda
     uniqueID: 1392257413
+    locked: 0
+  - name: Prototype
+    uniqueID: 432753807
     locked: 0
