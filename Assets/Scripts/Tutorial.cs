@@ -9,7 +9,7 @@ public class Tutorial : MonoBehaviour
     public GameObject TStep1Panel;
     public void OnClick()
     {
-        UIManager.instance.IncreaseCoin(5000);
+        UIManager.instance.IncreaseCoin(2000);
         WelcomePanel.SetActive(false);
         TStep1Panel.SetActive(true);
     }

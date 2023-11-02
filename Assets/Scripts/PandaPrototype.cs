@@ -32,7 +32,7 @@ public class PandaPrototype : MonoBehaviour
     public void AddPanda()
     {
         Debug.Log("AddPanda called");
-
+        if (gameObject.GetComponent<InstallCheck>().CanInstall() == false) return;
         // if (gameObject.GetComponent<InstallCheck>().CanInstall() == false) return;
         GameObject newPanda = Instantiate(panda);
 

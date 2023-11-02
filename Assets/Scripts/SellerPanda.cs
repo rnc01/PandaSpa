@@ -15,14 +15,20 @@ public class SellerPanda : MonoBehaviour
     public Transform tf;
     // public int[] cost = new int[3] { 500, 1000, 2000 };
     public TextMeshProUGUI txt;
+    public Sprite sp;
 
     public void LevelUp()
     {
         level += 1;
+        if(level != 0)
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = sp;
+        }
     }
 
     void Update()
     {
+        if (level == 0) return;
         txt.text = "(LV:" + level + ")";
         if (canCook == true && onFood == false)
         {
