@@ -21,6 +21,8 @@ public class PandaPrototype : MonoBehaviour
 
     void Start()
     {
+        print("here" + pandatype.Length);
+        print(panda);
         // 저장된 판다 번호 있다면 번호 불러오기
         if (File.Exists(DataManager.instance.path + "Number"))
         {
@@ -35,11 +37,12 @@ public class PandaPrototype : MonoBehaviour
         if (gameObject.GetComponent<InstallCheck>().CanInstall() == false) return;
         // if (gameObject.GetComponent<InstallCheck>().CanInstall() == false) return;
         GameObject newPanda = Instantiate(panda);
-
+        print("h" + pandatype.Length);
         // 판다번호(종류,x,y) 저장
         DataManager.instance.nownumber = pandaNumber;
         pandaNumber++;
-        PandaSetting(panda);
+        
+
         Vector2 position = Camera.main.ScreenToWorldPoint(gameObject.transform.position);
         DataManager.instance.nowData.PandaX = gameObject.transform.position.x;
         DataManager.instance.nowData.PandaY = gameObject.transform.position.y;
@@ -59,17 +62,7 @@ public class PandaPrototype : MonoBehaviour
         newPan.transform.position = new Vector3(x, y, 0);
     }
 
-    // 판다의 종류 저장
-    public void PandaSetting(GameObject panda)
-    {
-        for (int i = 0; i < pandatype.Length; i++)
-        {
-            if (panda == pandatype[i])
-            {
-                DataManager.instance.nowData.Panda = i;
-            }
-        }
-    }
+
 
     public void DeletePanda()
     {

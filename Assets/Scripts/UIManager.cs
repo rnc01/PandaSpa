@@ -40,7 +40,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
 
-        print("here");
+        print("he" + pandatype.Length);
         // 파일에 저장된 판다들 불러오기
         for (int i = 0; i < 1000; i++)
         {
@@ -77,10 +77,13 @@ public class UIManager : MonoBehaviour
 
     public void CreatePandaPrototype(GameObject pandaPrototype)
     {
+        // 판다 종류 저장
+        PandaSetting(pandaPrototype);
+
         GameObject newPandaPrototype = Instantiate(pandaPrototype, GameObject.Find("Ingame").transform);
         newPandaPrototype.transform.position = new Vector3(800, 1000, -1);
 
-        if(TStep2Panel.activeSelf == true) TStep2Panel.SetActive(false);
+        if(TStep2Panel.activeSelf == true) TStep2Panel.SetActive(false);  
     }
 
     // 저장된 판다 불러오기 실현
@@ -91,5 +94,20 @@ public class UIManager : MonoBehaviour
         float y = DataManager.instance.nowData.PandaY;
 
         PandaPrototype.instance.AddPanda(x, y, panda);
+    }
+
+    // 판다의 종류 저장
+    public void PandaSetting(GameObject panda)
+    {
+        print(pandatype.Length + "여기?");
+        print(pandatype[1]);
+        for (int i = 0; i < pandatype.Length; i++)
+        {
+            if (panda == pandatype[i])
+            {
+                DataManager.instance.nowData.Panda = i;
+                print(i);
+            }
+        }
     }
 }
