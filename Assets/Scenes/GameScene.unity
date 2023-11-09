@@ -2136,6 +2136,7 @@ MonoBehaviour:
   - {fileID: 6053202067273434988, guid: 0c51859c2ae59094eb567a8540e21349, type: 3}
   - {fileID: 6053202067273434988, guid: 2c46fbed7b48a4b4894ad782c1cfb7cf, type: 3}
   - {fileID: 6053202067273434988, guid: 4c42a4529cbb7454181700bb95b44849, type: 3}
+  - {fileID: 1962503832354279273, guid: 11e9241ce36b82a47b1255efd0b117b9, type: 3}
   bgmPlayer: {fileID: 0}
   text: {fileID: 869254739}
   coin: 0
@@ -3579,6 +3580,7 @@ MonoBehaviour:
   - {fileID: 306977201672678670, guid: 43f010c89e2c88c418ae993e80290bbc, type: 3}
   - {fileID: 306977201672678670, guid: cd44680e996040d43a16ee18d8c2964f, type: 3}
   - {fileID: 306977201672678670, guid: 123273ffb19f3a2439cb6f89b82296c2, type: 3}
+  - {fileID: 1962503832354279273, guid: 11e9241ce36b82a47b1255efd0b117b9, type: 3}
 --- !u!1 &884660150
 GameObject:
   m_ObjectHideFlags: 0
